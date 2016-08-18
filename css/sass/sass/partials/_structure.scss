@@ -1,0 +1,17 @@
+#container{
+    height: 100%;
+}
+nav{
+    margin: -180px auto 0;
+}
+// .content>div:first-child{
+//     margin: -80px auto 0;
+// }
+.sector-list{
+    @media screen and (max-width: $screen-sm-min) {
+        width:100%;
+    }
+    @media screen and (min-width: $screen-sm-min) {
+        width:33%;
+    }
+}
