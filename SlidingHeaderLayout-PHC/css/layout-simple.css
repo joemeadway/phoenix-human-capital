@@ -75,24 +75,19 @@
 }
 
 /* Trigger button with SVG */
-.trigger {
+.cta-button {
 	position: relative;
 	-webkit-flex: none;
 	flex: none;
 	overflow: hidden;
-	margin: 0 0 0 20px;
+	margin-top: 10px;
 	padding: 0;
-	width: 40px;
-	height: 40px;
+	width: 130px;
+	height: 55px;
 	outline: none;
 	border: none;
 	background: none;
-}
-
-/* Hide the text */
-.trigger span {
-	position: absolute;
-	top: 100%;
+	text-align:left;
 }
 
 .icon rect,
