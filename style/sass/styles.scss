@@ -1,0 +1,44 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+
+.make-white{
+	background-color:rgba(255,255,255,0.8);
+}
+
+// #title{
+//     margin-top:50px;
+// }
+.row{
+    margin-top:50px;
+}
+
+.bg-image-1{
+	background:url("../../img/bg1.jpg") no-repeat fixed 50% 55% / cover;
+}
+
+.bg-image-2{
+	background:url("../../img/bg2.jpg") no-repeat fixed 50% 55% / cover;
+}
+
+.bg-image-3{
+	background:url("../../img/bg3.jpg") no-repeat fixed 50% 55% / cover;
+}
+
+.bg-image-4{
+	background:url("../../img/bg4.jpg") no-repeat fixed 50% 55% / cover;
+}
+
+.bg-image-5{
+	background:url("../../img/bg5.jpg") no-repeat fixed 50% 55% / cover;
+}
+
+.bg-image-6{
+	background:url("../../img/bg6.jpg") no-repeat fixed 50% 55% / cover;
+}
