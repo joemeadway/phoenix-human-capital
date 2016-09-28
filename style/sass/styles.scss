@@ -7,11 +7,44 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
+$base-color:#e8b75e;
+$primary-color:#a60000;
+$neutral-color:#ffffff;
 
-.make-white{
-	background-color:rgba(255,255,255,0.8);
+#logo-container{
+	text-align: center;
 }
 
+#logo-img{
+	margin:20px;
+	width:140px;
+}
+h1, h3, h4{
+	color:$primary-color;
+}
+h3{
+	margin-bottom:20px;
+}
+
+.make-base{
+	//background-color:rgba($base-color, 0.8);
+	background-color:$base-color;
+}
+.make-neutral{
+	background-color:rgba($neutral-color, 0.9);
+}
+.icon-subheading{
+	i{
+		color: $primary-color;
+	}
+	span{
+		color:$primary-color;
+		font-size:$font-size-h4;
+	}
+	+ div, + p{
+		margin-top:10px;
+	}
+}
 // #title{
 //     margin-top:50px;
 // }

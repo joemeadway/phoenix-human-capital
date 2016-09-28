@@ -46,6 +46,8 @@
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace
 // $font-family-base:        $font-family-sans-serif
+$font-family-sans-serif:Segoe, "Segoe UI", Optima, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
 // $font-size-base:          14px
 // $font-size-large:         ceil(($font-size-base * 1.25)) // ~18px
@@ -57,6 +59,9 @@
 // $font-size-h4:            ceil(($font-size-base * 1.25)) // ~18px
 // $font-size-h5:            $font-size-base
 // $font-size-h6:            ceil(($font-size-base * 0.85)) // ~12px
+$font-size-base:14px;
+$font-size-h1:floor(($font-size-base * 3.6));
+$font-size-h2:floor(($font-size-base * 1.5));
 
 //** Unit-less `line-height` for use in components like buttons.
 // $line-height-base:        1.428571429 // 20/14
