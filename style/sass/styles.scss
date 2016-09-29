@@ -7,9 +7,11 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
-$base-color:#e8b75e;
-$primary-color:#a60000;
-$neutral-color:#ffffff;
+
+@import "site-variables";
+@import "site-mixins";
+@import "navigation";
+
 
 #logo-container{
 	text-align: center;
@@ -51,6 +53,9 @@ h3{
 .row{
     margin-top:50px;
 }
+.title{
+	padding-bottom: 20px;
+}
 
 .bg-image-1{
 	background:url("../../img/bg1.jpg") no-repeat fixed 50% 55% / cover;
@@ -75,3 +80,5 @@ h3{
 .bg-image-6{
 	background:url("../../img/bg6.jpg") no-repeat fixed 50% 55% / cover;
 }
+
+

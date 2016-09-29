@@ -26,7 +26,7 @@
 
 	<section id="home" class="" >
 		<div class="container">
-			<div class="row make-base">
+			<div class="row make-base title">
 				<div class="col-xs-12">
 					<div id="logo-container" class="col-sm-3 hidden-xs">
 						<img id="logo-img" title="Phoenix Human Capital" class="" src="./phc_logo.png">
@@ -44,13 +44,25 @@
 
 			<div class="row make-base hidden-xs">
 				<div class="col-sm-12">
-					<nav class="link">
+					<nav id="desktop-nav" class="link">
 						<a href="#about-us" class="col-sm-3">About Us</a>
 						<a href="#sectors" class="col-sm-3">Sectors</a>
 						<a href="#clients" class="col-sm-3">Clients</a>
 						<a href="#candidates" class="col-sm-3">Candidates</a>
 					</nav>
 				</div>
+			</div>
+
+
+
+			<div id="mobile-nav">
+				<nav class="mobile-links">
+					<a href="#about-us" class="">About Us</a>
+					<a href="#sectors" class="">Sectors</a>
+					<a href="#clients" class="">Clients</a>
+					<a href="#candidates" class="">Candidates</a>
+				</nav>
+				<a class="nav-trigger cd-img-replace">&nbsp;<span></span></a>
 			</div>
 			
 			<div class="row make-neutral">
@@ -163,83 +175,19 @@
 //dial up random background image
 var body = document.getElementsByTagName('body')[0];
 body.classList.add("bg-image-"+(Math.floor(Math.random() * 6) + 1 )) ;
+
+var mobileNav = document.getElementById("mobile-nav");
+mobileNav.addEventListener("click", toggleClass);
+
+function toggleClass(){
+	document.getElementsByClassName("mobile-links")[0].classList.toggle('open');
+}
+
+
 </script>
 
 <style type="text/css">
-nav a {
-	position: relative;
-	display: inline-block;
-	margin: 15px 0px;
-	outline: none;
-	color: #fff;
-	text-decoration: none !important;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 400;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	font-size: 1.35em;
-	text-align:center;
-}
 
-.link a:hover,
-.link a:focus {
-	outline: none;
-}
-.link a {
-	padding: 10px;
-	color: red;
-	font-weight: 700;
-	text-shadow: none;
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	transition: color 0.3s;
-}
-
-.link a::before,
-.link a::after {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: #fff;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
-
-.link a::before {
-	top: 0;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
-
-.link a::after {
-	bottom: 0;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
-}
-
-.link a:hover,
-.link a:focus {
-	color: blue;
-}
-
-.link a:hover::before,
-.link a:focus::before,
-.link a:hover::after,
-.link a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
-}
 </style>
 
 </body>
