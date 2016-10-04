@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="./style/stylesheets/styles.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+	
 	
 	<!-- https://codyhouse.co/gem/smart-fixed-navigation/ -->
 	<!-- https://codyhouse.co/gem/vertical-fixed-navigation/ -->
@@ -45,10 +47,10 @@
 			<div class="row make-base hidden-xs">
 				<div class="col-sm-12">
 					<nav id="desktop-nav" class="link">
-						<a href="#about-us" class="col-sm-3">About Us</a>
-						<a href="#sectors" class="col-sm-3">Sectors</a>
-						<a href="#clients" class="col-sm-3">Clients</a>
-						<a href="#candidates" class="col-sm-3">Candidates</a>
+						<a href="" class="col-sm-3 tab" data-section="about-us">About Us</a>
+						<a href="" class="col-sm-3 tab" data-section="sectors">Sectors</a>
+						<a href="" class="col-sm-3 tab" data-section="clients">Clients</a>
+						<a href="" class="col-sm-3 tab" data-section="candidates">Candidates</a>
 					</nav>
 				</div>
 			</div>
@@ -57,16 +59,16 @@
 
 			<div id="mobile-nav">
 				<nav class="mobile-links">
-					<a href="#about-us" class="">About Us</a>
-					<a href="#sectors" class="">Sectors</a>
-					<a href="#clients" class="">Clients</a>
-					<a href="#candidates" class="">Candidates</a>
+					<a href="" class="tab" data-section="about-us">About Us</a>
+					<a href="" class="tab" data-section="sectors">Sectors</a>
+					<a href="" class="tab"  data-section="clients">Clients</a>
+					<a href="" class="tab"  data-section="candidates">Candidates</a>
 				</nav>
 				<a class="nav-trigger cd-img-replace">&nbsp;<span></span></a>
 			</div>
 			
 			<div class="row make-neutral">
-				<div id="about-us" class="col-xs-12">
+				<div id="about-us" class="col-xs-12 section">
 					<h3>About Us</h3>
 					<p>Phoenix Human Capital are construction & property specialists.</p>
 					<p>We pride ourselves in our knowledge of the industry we serve, our understanding of the roles which we recruit for and our awareness of the often complicated human factors a career change or new hire can bring about.</p>
@@ -74,7 +76,7 @@
 					<p>We recruit professionals across a broad range of sectors in Asia including engineers, project managers, project cost & controls, architects & designers and work with a diverse range of Consultants, Contractors, Developers and Project Management companies in the region.</p>
 					<p>Our aim is simple - to deliver a rewarding experience to job seekers and clients alike.</p>
 				</div>
-				<div id="sectors" class="col-xs-12">
+				<div id="sectors" class="col-xs-12 section">
 					<h3>Sectors</h3>
 					<p>Phoenix Human Capital work with a range of clients across a broad spectrum of the construction & property industry. We mirror the services our clients provide identifying hard to find talent in an increasingly competitive market.</p>
 					<div class="col-md-4">		
@@ -110,7 +112,7 @@
 						</ul>
 					</div>
 				</div>
-				<div id="clients" class="col-xs-12">
+				<div id="clients" class="col-xs-12 section">
 					<h3 class="">Our Client Services</h3>
 			
 					<div class="icon-subheading"><i class="fa fa-files-o fa-2x pull-left"></i><span>Database File Search</span></div>
@@ -131,7 +133,7 @@
 					</div>
 				</div>
 
-				<div id="candidates" class="col-xs-12">
+				<div id="candidates" class="col-xs-12 section">
 					<h3>Make the best use of our expertise</h3>
 					<p>At Phoenix Human Capital we have the specialist industry knowledge, market experience, privileged insight and the key decision making contacts. We can help you determine who you should be speaking to and how to secure the best opportunity for you.</p>
 					<p>It's often the case that many positions go unadvertised by employers or that they are always interested in investing in the right people when they come along. Speak with us to make sure you have the full picture about the opportunities in the market and not just the ones that are on view in the public domain</p>
@@ -167,27 +169,48 @@
 
 			</div>
 		
+			<div class="row make-base">
+				<div class="col-xs-12">
+					<div class="col-xs-12 center-block" id="contact-box">Contact Us</div>
+				</div>
+			</div>
+
+		
 		</div>
 	</section>
 
 
 <script type="text/javascript">
 //dial up random background image
-var body = document.getElementsByTagName('body')[0];
-body.classList.add("bg-image-"+(Math.floor(Math.random() * 6) + 1 )) ;
-
-var mobileNav = document.getElementById("mobile-nav");
-mobileNav.addEventListener("click", toggleClass);
+$('body').addClass("bg-image-"+(Math.floor(Math.random() * 6) + 1 )) ;
+$('#mobile-nav').on('click', toggleClass);
+$('#desktop-nav a').on('click', toggleSection);
+$('.mobile-links a').on('click', toggleSection);
 
 function toggleClass(){
-	document.getElementsByClassName("mobile-links")[0].classList.toggle('open');
+	$(".mobile-links")[0].classList.toggle('open');
 }
 
+
+
+function toggleSection(event){
+	event.preventDefault();
+	$('.section').hide('400')
+	$('#'+$(event.target).data('section')).show('400');
+    
+}
 
 </script>
 
 <style type="text/css">
+.section{
+	
+	display:none;
+}
 
+#contact-box{
+	text-align:center;
+}
 </style>
 
 </body>
