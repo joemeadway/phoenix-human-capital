@@ -11,6 +11,7 @@
 @import "site-variables";
 @import "site-mixins";
 @import "navigation";
+@import "morph-button";
 
 
 #logo-container{
@@ -47,15 +48,24 @@ h3{
 		margin-top:10px;
 	}
 }
-// #title{
-//     margin-top:50px;
-// }
 .row{
     margin-top:50px;
 }
 .title{
 	padding-bottom: 20px;
 }
+.section{
+	
+	display:none;
+}
+#bottom-box{
+	margin-bottom:15px;
+}
+#contact-box{
+	@include link-text;
+	cursor: pointer;
+}
+
 
 .bg-image-1{
 	background:url("../../img/bg1.jpg") no-repeat fixed 50% 55% / cover;

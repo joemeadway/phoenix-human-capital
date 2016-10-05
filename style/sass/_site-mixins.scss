@@ -1,3 +1,30 @@
 @mixin border-radius($radius:.25em) {
   border-radius: $radius;
 }
+
+@mixin link-text{
+  	position: relative;
+    display: inline-block;
+    margin: 15px 0px;
+    outline: none;
+    color: $tertiary-color;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.35em;
+    text-align:center;
+    padding: 10px;
+
+    &:hover, &:focus{
+	    outline: none;    
+        color: $primary-color;
+        &::after{
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+        }    
+    }
+}

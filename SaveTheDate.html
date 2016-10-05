@@ -13,6 +13,8 @@
 	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+
+	
 	
 	
 	<!-- https://codyhouse.co/gem/smart-fixed-navigation/ -->
@@ -169,9 +171,21 @@
 
 			</div>
 		
-			<div class="row make-base">
+			<div id="bottom-box" class="row make-base">
 				<div class="col-xs-12">
-					<div class="col-xs-12 center-block" id="contact-box">Contact Us</div>
+										<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+						<button type="button">Terms &amp; Conditions</button>
+						<div class="morph-content">
+							<div>
+								<div class="content-style-text">
+									<span id="close">Close</span>
+									<h2>Terms &amp; Conditions</h2>
+									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+									<p><input id="terms" type="checkbox" /><label for="terms">I accept the terms &amp; conditions.</label></p>
+								</div>
+							</div>
+						</div>
+					</div><!-- morph-button -->
 				</div>
 			</div>
 
@@ -201,16 +215,69 @@ function toggleSection(event){
 }
 
 </script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/classie.js"></script>
+<script type="text/javascript" src="./js/morphing-button.js" ></script>
+<script>
+			(function() {	
+				var docElem = window.document.documentElement, didScroll, scrollPosition;
 
+				// trick to prevent scrolling when opening/closing button
+				function noScrollFn() {
+					window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+				}
+
+				function noScroll() {
+					window.removeEventListener( 'scroll', scrollHandler );
+					window.addEventListener( 'scroll', noScrollFn );
+				}
+
+				function scrollFn() {
+					window.addEventListener( 'scroll', scrollHandler );
+				}
+
+				function canScroll() {
+					window.removeEventListener( 'scroll', noScrollFn );
+					scrollFn();
+				}
+
+				function scrollHandler() {
+					if( !didScroll ) {
+						didScroll = true;
+						setTimeout( function() { scrollPage(); }, 60 );
+					}
+				};
+
+				function scrollPage() {
+					scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+					didScroll = false;
+				};
+
+				scrollFn();
+
+				var UIBtnn = new UIMorphingButton( document.querySelector( '.morph-button' ), {
+					closeEl : '#close',
+					onBeforeOpen : function() {
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterOpen : function() {
+						// can scroll again
+						//canScroll();
+					},
+					onBeforeClose : function() {
+						// don't allow to scroll
+						noScroll();
+					},
+					onAfterClose : function() {
+						// can scroll again
+						canScroll();
+					}
+				} );
+			})();
+		</script>
 <style type="text/css">
-.section{
-	
-	display:none;
-}
 
-#contact-box{
-	text-align:center;
-}
 </style>
 
 </body>
